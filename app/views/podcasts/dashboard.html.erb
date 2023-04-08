@@ -24,9 +24,7 @@
         <% @episodes.each do |episode| %>
           <li class="cf">
             <div class="episode_thumbnail">
-              <a href="#">
-                <%= image_tag episode.episode_thumbnail %>
-              </a>
+              <%= link_to (image_tag episode.episode_thumbnail, class: ''), podcast_episode_path(@podcast, episode) %>
             </div>
             <div class="episode_overview">
               <h2><%= link_to episode.title, podcast_episode_path(@podcast, episode) %></h2>
